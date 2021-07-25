@@ -11,15 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <header class="header">
     <div class="header__container container">
-      <div class="logo">
-        <p class="logo__text">Pintoras Mexicanas</p>
-      </div>
+      <a class="logo" href="#inicio">
+        <h1 class="logo__text">Pintoras Mexicanas</h1>
+      </a>
       <nav class="navigation">
         <ul class="navigation__list">
           <li><a class="navigation__link" href="#pintora1">Frida Kahlo</a></li>
@@ -28,9 +31,12 @@
           <li><a class="navigation__link" href="#pintora4">Remedios Varo</a></li>
         </ul>
       </nav>
+      <div class="navigation__menu">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
   </header>
-  <div class="banner">
+  <div class="banner" id="inicio">
     <div class="container">
       <img class="banner__img" src="assets/images/banner.png" alt="Banner">
     </div>
@@ -135,6 +141,14 @@
   <footer class="footer">
     <p class="footer__texto">Made for Escuela de Código</p>
   </footer>
+
+  <script>
+    const menuIcon = document.querySelector('.navigation__menu');
+    const navigation = document.querySelector('.navigation')
+    menuIcon.addEventListener('click', () => {
+      navigation.classList.toggle('navigation--mobile');
+    })
+  </script>
 </body>
 
 </html>

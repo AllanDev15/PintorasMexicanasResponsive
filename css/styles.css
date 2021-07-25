@@ -30,6 +30,7 @@ a {
 
 .container {
   max-width: 1000px;
+  width: 90%;
   margin: 0 auto;
 }
 @media (min-width: 1400px) {
@@ -49,23 +50,16 @@ a {
   color: white;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-}
-@media (min-width: 768px) {
-  .header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
 }
 
-.logo {
+.logo__text {
   font-size: 1.25rem;
   font-weight: 600;
-}
-.logo__text {
-  margin: 0px 0px 8px 0px;
-  padding: 8px;
+  color: white;
 }
 @media (min-width: 768px) {
   .logo__text {
@@ -73,19 +67,38 @@ a {
   }
 }
 
+.navigation {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: fixed;
+  top: 60px;
+  left: 0px;
+  width: 100%;
+  background-color: #aa0047;
+}
+.navigation--mobile {
+  opacity: 1;
+}
 .navigation__list {
   margin: 0px;
 }
 .navigation__list li {
   padding: 8px 0px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .navigation {
+    display: block;
     flex-basis: 50%;
+    opacity: 1;
+    position: relative;
+    top: unset;
   }
   .navigation__list {
     display: flex;
     justify-content: space-between;
+  }
+  .navigation__menu {
+    display: none;
   }
 }
 @media (min-width: 1400px) {
@@ -99,6 +112,10 @@ a {
 }
 .navigation__link:hover {
   text-decoration: underline;
+}
+
+.navigation__menu {
+  font-size: 20px;
 }
 
 .banner {
